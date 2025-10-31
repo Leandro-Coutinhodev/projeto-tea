@@ -40,7 +40,16 @@ router.post('/register', async (req, res) => {
       [nome_crianca, idade, data_nascimento, genero, municipio, estado, email_responsavel, hashed]
     );
 
-    res.json({ message: 'Cadastro realizado com sucesso!' });
+    res.json({
+      message: 'Cadastro realizado com sucesso!',
+      usuario: {
+        nome_crianca: nome_crianca,
+        idade: idade,
+        municipio: municipio,
+        estado: estado,
+        pontuacao: pontuacao
+      }
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Erro ao cadastrar usuário.' });
