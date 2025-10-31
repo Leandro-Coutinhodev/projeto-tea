@@ -47,7 +47,7 @@ router.post('/register', async (req, res) => {
         idade: idade,
         municipio: municipio,
         estado: estado,
-        pontuacao: pontuacao
+        pontuacao: 0
       }
     });
   } catch (err) {
